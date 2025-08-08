@@ -1,0 +1,61 @@
+name: portfolio
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_feather_icons: ^2.0.0+1
+  flutter_svg: ^2.2.0
+  font_awesome_flutter: ^10.8.0
+  google_fonts: ^6.2.1
+  http: ^1.4.0
+  url_launcher: ^6.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/shapes/filled/
+    - assets/shapes/outlined/
+    - assets/shapes/icons/
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand-Regular.ttf
+        - asset: assets/fonts/Quicksand-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Quicksand-Bold.ttf
+          weight: 700
+
+    - family: GoogleSansCode
+      fonts:
+        - asset: assets/fonts/GoogleSansCode-Regular.ttf
+        - asset: assets/fonts/GoogleSansCode-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/GoogleSansCode-Bold.ttf
+          weight: 700
+
+    - family: RobotoSlab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-Regular.ttf
+        - asset: assets/fonts/RobotoSlab-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/RobotoSlab-Bold.ttf
+          weight: 700
+
+    - family: Limelight
+      fonts:
+        - asset: assets/fonts/Limelight-Regular.ttf
+
+    - family: PlaywriteHU
+      fonts:
+        - asset: assets/fonts/PlaywriteHU-Regular.ttf 

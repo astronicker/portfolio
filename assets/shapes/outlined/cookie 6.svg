@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   fill="none"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="cookie 6.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.91"
+     inkscape:cx="100.38363"
+     inkscape:cy="100"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="36"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1" />
+  <g
+     clip-path="url(#clip0_103_21)"
+     id="g1"
+     transform="matrix(1,0,0,0.98721228,-0.08064332,1.2787705)"
+     style="fill:#000000">
+    <path
+       d="m 70.634429,17.628383 c 13.192328,-21.4428085 45.700321,-21.4427986 58.892031,0 l 0.47902,0.778768 c 6.08688,9.892228 17.18081,16.000981 29.20697,16.08132 l 0.94773,0.0064 c 26.06853,0.174067 42.32228,27.02188 29.44543,48.638755 l -0.46766,0.785069 c -5.94031,9.972566 -5.94031,22.190375 0,32.162735 l 0.46766,0.78467 c 12.87685,21.61747 -3.3769,48.46479 -29.44543,48.63905 l -0.94773,0.006 c -12.02616,0.0808 -23.12009,6.18978 -29.20697,16.08142 l -0.47902,0.77877 c -13.19171,21.44319 -45.699703,21.44319 -58.892031,0 l -0.479126,-0.77885 C 64.069236,171.70074 52.974389,165.5917 40.948234,165.51096 l -0.946792,-0.006 C 13.9329,165.3308 -2.3208525,138.48347 10.555273,116.866 l 0.467667,-0.78467 c 5.940192,-9.97236 5.940192,-22.190169 0,-32.162736 L 10.555273,83.133525 C -2.3208525,61.516652 13.9329,34.668837 40.001442,34.494771 l 0.946792,-0.0064 c 12.026258,-0.0803 23.121002,-6.189051 29.207069,-16.081279 z"
+       fill="none"
+       id="path1"
+       stroke="currentColor"
+       stroke-width="1.95066" />
+  </g>
+  <defs
+     id="defs2">
+    <linearGradient
+       id="paint0_linear_103_21"
+       x1="100.081"
+       y1="0"
+       x2="100.081"
+       y2="200"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#B8DBFC"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#F8FBFE"
+         id="stop2" />
+    </linearGradient>
+    <clipPath
+       id="clip0_103_21">
+      <rect
+         width="200"
+         height="200"
+         fill="white"
+         id="rect2" />
+    </clipPath>
+  </defs>
+</svg>

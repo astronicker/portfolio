@@ -24,7 +24,7 @@ class _ContactPageState extends State<ContactPage> {
     setState(() => isSending = true);
 
     final response = await http.post(
-      Uri.parse('https://formsubmit.co/iamts0009@gmail.com'),
+      Uri.parse('https://formsubmit.co/99e9cc656bf8b9a723a45f3b1c020e71'),
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: {
         'email': emailController.text.trim(),
@@ -95,6 +95,10 @@ class _ContactPageState extends State<ContactPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         _ContactBox(
+                          onTap:
+                              () => ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Copied to clipboard')),
+                              ),
                           title: 'Phone',
                           subtitle: '+91 9589623264',
                           icon: FontAwesomeIcons.phone,
@@ -102,9 +106,7 @@ class _ContactPageState extends State<ContactPage> {
                         const SizedBox(height: 5),
                         _ContactBox(
                           onTap: () {
-                            Clipboard.setData(
-                              ClipboardData(text: 'meayushshukla07@gmail.com'),
-                            );
+                            openEmail();
                           },
                           title: 'Mail',
                           subtitle: 'meayushshukla07@gmail.com',

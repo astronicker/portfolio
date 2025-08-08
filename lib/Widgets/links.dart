@@ -41,3 +41,15 @@ void openLinkedin() => _launchUrl("https://www.linkedin.com/in/astronicker");
 void openAndroidBureau() => _launchUrl("https://www.androidbureau.com");
 
 void openGithubDonor() => _launchUrl("https://github.com/astronicker/Donor");
+
+void openEmail() async {
+  final gmailLink = Uri.parse(
+    'https://mail.google.com/mail/?view=cm&to=meayushshkla07@gmail.com',
+  );
+
+  if (await canLaunchUrl(gmailLink)) {
+    await launchUrl(gmailLink, mode: LaunchMode.externalApplication);
+  } else {
+    print('Could not open Gmail');
+  }
+}

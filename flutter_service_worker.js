@@ -1,0 +1,307 @@
+'use strict';
+const MANIFEST = 'flutter-app-manifest';
+const TEMP = 'flutter-temp-cache';
+const CACHE_NAME = 'flutter-app-cache';
+
+const RESOURCES = {"index.html": "6a50c63499e1051e50e643e1607c87dc",
+"/": "6a50c63499e1051e50e643e1607c87dc",
+"flutter_bootstrap.js": "45f37c1dea3542b27c613bd86a09352b",
+".git/refs/heads/gh-pages": "3cd020eb7b24302161eba62330463380",
+".git/refs/remotes/origin/gh-pages": "3cd020eb7b24302161eba62330463380",
+".git/config": "7cbfbbed00580df7af7f97d1fe90c702",
+".git/objects/b9/6a5236065a6c0fb7193cb2bb2f538b2d7b4788": "4227e5e94459652d40710ef438055fe5",
+".git/objects/e0/7ac7b837115a3d31ed52874a73bd277791e6bf": "74ebcb23eb10724ed101c9ff99cfa39f",
+".git/objects/4f/87bbd911a60427435a61f04b279ae3dfe2848d": "bfec3b0d528056e72c6bb8b6c6010818",
+".git/objects/af/ca2d9fe319096481940b396b5bb22ea44d27f9": "6ec18ad8452eab39d6b3d70bf61c6f28",
+".git/objects/18/c2c08ffb115f6a670da12d3185765422f103b6": "746a98e4abae7056c0e3dd322869264c",
+".git/objects/33/caa9f900a6e522af814d4b036d52f57fd5d9b6": "9033a77f6bc8294cd0e37cccf20ef58f",
+".git/objects/dc/11fdb45a686de35a7f8c24f3ac5f134761b8a9": "761c08dfe3c67fe7f31a98f6e2be3c9c",
+".git/objects/05/d952ac566415ade1565a3b324d8ada4dc51d9f": "22e85946d9df19bc3f035dbb8321fda2",
+".git/objects/b0/ccd166f7e17c9a28ccfc6478f541c38594288a": "60ddf2de7cffbb3a31a227cc5d655d86",
+".git/objects/4c/51fb2d35630595c50f37c2bf5e1ceaf14c1a1e": "a20985c22880b353a0e347c2c6382997",
+".git/objects/1a/d7683b343914430a62157ebf451b9b2aa95cac": "94fdc36a022769ae6a8c6c98e87b3452",
+".git/objects/90/3f2550051c8261463feab761d087d2e5451bde": "642c0a81e11713dea593f23688616c8f",
+".git/objects/f1/cc059e380a514888ed9a513a70a5efbac6d4f5": "de2ee7d3cf9174fe4bbdd3cb8811f96c",
+".git/objects/c0/3548a1e9b6cadd8971068c60f8b2b2fb870a47": "a8963f5589d3eb4f34c4afce2a876bd7",
+".git/objects/01/4c86120aa4aaac0d0bc75dc6edbe16c6e4b163": "c566b02c13e8b32429f849302b84fdfd",
+".git/objects/01/06805ff5eddc4da561019fe8124c3831c69164": "7aeba1496c3024bb07e08c5bee0e83ac",
+".git/objects/53/18a6956a86af56edbf5d2c8fdd654bcc943e88": "a686c83ba0910f09872b90fd86a98a8f",
+".git/objects/53/3d2508cc1abb665366c7c8368963561d8c24e0": "4592c949830452e9c2bb87f305940304",
+".git/objects/8a/51a9b155d31c44b148d7e287fc2872e0cafd42": "9f785032380d7569e69b3d17172f64e8",
+".git/objects/47/6c8b6e715795b7f2a4280b591495145baa225c": "d40b98a4deeb1b0634c25373d1281aea",
+".git/objects/ec/a0ffadb6a8c38f6718b2c52d1ffb880daea078": "f5a4f9fcb9dc5fe99ce520a3486e447b",
+".git/objects/04/5289c4d91e298358edeb66eb5c747550051d8b": "c7bc873dc6d465f445c6462f15c2c0f3",
+".git/objects/5f/bf1f5ee49ba64ffa8e24e19c0231e22add1631": "f19d414bb2afb15ab9eb762fd11311d6",
+".git/objects/40/1184f2840fcfb39ffde5f2f82fe5957c37d6fa": "1ea653b99fd29cd15fcc068857a1dbb2",
+".git/objects/c8/08fb85f7e1f0bf2055866aed144791a1409207": "92cdd8b3553e66b1f3185e40eb77684e",
+".git/objects/93/2d339b6b993f410eda69f69bd6675eb14bee8c": "7a7bf7ad06204c8b2c2f59426b802556",
+".git/objects/44/ca4db249d1aad84acab41456d0a43a24e2c2d7": "2553cd48dc47fbe2a08946491a3b86f0",
+".git/objects/f0/ee94e46b6877ef09854c6fe11931c04e73ffd4": "60e547813f5a5048002254b61ff2624e",
+".git/objects/d8/856fbd84367894eb921c7ab3462299ebc009b1": "a9a4137459c0073f94e19a82a25e6190",
+".git/objects/73/c63bcf89a317ff882ba74ecb132b01c374a66f": "6ae390f0843274091d1e2838d9399c51",
+".git/objects/9b/d3accc7e6a1485f4b1ddfbeeaae04e67e121d8": "784f8e1966649133f308f05f2d98214f",
+".git/objects/a3/d0ceea24d0c90d38dd8198e4ec934750bcf4cd": "4aab7897de220e3b6b930b873b4f0419",
+".git/objects/70/a234a3df0f8c93b4c4742536b997bf04980585": "d95736cd43d2676a49e58b0ee61c1fb9",
+".git/objects/0a/2305548baa5a069ade7a4fea57ae3d1d5ca51d": "304579acca57ea5e4016e154fe400a4b",
+".git/hooks/pre-merge-commit.sample": "39cb268e2a85d436b9eb6f47614c3cbc",
+".git/hooks/pre-applypatch.sample": "054f9ffb8bfe04a599751cc757226dda",
+".git/hooks/pre-push.sample": "2c642152299a94e05ea26eae11993b13",
+".git/hooks/post-update.sample": "2b7ea5cee3c49ff53d41e00785eb974c",
+".git/hooks/pre-commit.sample": "5029bfab85b1c39281aa9697379ea444",
+".git/hooks/pre-rebase.sample": "56e45f2bcbc8226d2b4200f7c46371bf",
+".git/hooks/sendemail-validate.sample": "4d67df3a8d5c98cb8565c07e42be0b04",
+".git/hooks/applypatch-msg.sample": "ce562e08d8098926a3862fc6e7905199",
+".git/hooks/update.sample": "647ae13c682f7827c22f5fc08a03674e",
+".git/hooks/commit-msg.sample": "579a3c1e12a1e74a98169175fb913012",
+".git/hooks/push-to-checkout.sample": "c7ab00c7784efeadad3ae9b228d4b4db",
+".git/hooks/prepare-commit-msg.sample": "2b5c047bdb474555e1787db32b2d2fc5",
+".git/hooks/pre-receive.sample": "2ad18ec82c20af7b5926ed9cea6aeedd",
+".git/hooks/fsmonitor-watchman.sample": "a0b2633a2c8e97501610bd3f73da66fc",
+".git/HEAD": "5ab7a4355e4c959b0c5c008f202f51ec",
+".git/description": "a0a7c3fff21f2aea3cfa1d0316dd816c",
+".git/logs/refs/heads/gh-pages": "4217b822c4a1eaaff7f0fef52cd5df2f",
+".git/logs/refs/remotes/origin/gh-pages": "7fe5d1c37a517e03c420eb036f818a11",
+".git/logs/HEAD": "4217b822c4a1eaaff7f0fef52cd5df2f",
+".git/COMMIT_EDITMSG": "bf33659e165b8281f9fe2ebd3173840b",
+".git/info/exclude": "036208b4a1ab4a235d75c181e685e5a3",
+".git/index": "3b49f3407260ca45030cce6276adf6c6",
+"manifest.json": "d40c47d1c161f94dbcb13094d37f1f55",
+"icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
+"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
+"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
+"icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+"version.json": "0325640b78b9f97959290dc5ebb8b3ed",
+"main.dart.js": "0baaebbbc58f7ebc90a0d0fb7af26a15",
+"canvaskit/canvaskit.js": "728b2d477d9b8c14593d4f9b82b484f3",
+"canvaskit/chromium/canvaskit.js": "8191e843020c832c9cf8852a4b909d4c",
+"canvaskit/chromium/canvaskit.js.symbols": "b61b5f4673c9698029fa0a746a9ad581",
+"canvaskit/chromium/canvaskit.wasm": "f504de372e31c8031018a9ec0a9ef5f0",
+"canvaskit/skwasm_st.js": "d1326ceef381ad382ab492ba5d96f04d",
+"canvaskit/skwasm.js": "ea559890a088fe28b4ddf70e17e60052",
+"canvaskit/skwasm_st.js.symbols": "c7e7aac7cd8b612defd62b43e3050bdd",
+"canvaskit/skwasm.js.symbols": "e72c79950c8a8483d826a7f0560573a1",
+"canvaskit/canvaskit.js.symbols": "bdcd3835edf8586b6d6edfce8749fb77",
+"canvaskit/skwasm.wasm": "39dd80367a4e71582d234948adc521c0",
+"canvaskit/skwasm_st.wasm": "56c3973560dfcbf28ce47cebe40f3206",
+"canvaskit/canvaskit.wasm": "7a3f4ae7d65fc1de6a6e7ddd3224bc93",
+"favicon.png": "5dcef449791fa27946b3d35ad8803796",
+"flutter.js": "83d881c1dbb6d6bcd6b42e274605b69c",
+"assets/NOTICES": "cf4001f06ea7e40808fd9781bb2c4f39",
+"assets/FontManifest.json": "5d59ed8d24d2996013f48d3b8bf55b5f",
+"assets/AssetManifest.bin.json": "cec8939f3111f7621475058d06ccdc93",
+"assets/AssetManifest.bin": "db1b24e94fd837e57b881bffbc690f6b",
+"assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
+"assets/packages/flutter_feather_icons/fonts/feather.ttf": "40469726c5ed792185741388e68dd9e8",
+"assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "4662dd717f39a26b45a89a48027a99eb",
+"assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "bf21cd8fd775a3c59fd53afdee39e0e6",
+"assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "560dee1021508b49f3c3d66abe6bdd24",
+"assets/assets/shapes/outlined/ghost.svg": "e9b222d90b71ef9a5794b8abd40907bb",
+"assets/assets/shapes/outlined/sqare.svg": "b7887b1621a6cc19051113489e57f964",
+"assets/assets/shapes/outlined/circle.svg": "2e3398f9c15a904e07323d7ac88ae63c",
+"assets/assets/shapes/outlined/wifi.svg": "67145ee098d5aa51eeb062685400daea",
+"assets/assets/shapes/outlined/triangle.svg": "640d97654d03f25af39dcfd11da08db7",
+"assets/assets/shapes/outlined/cookie%25206.svg": "20dae155c4098cae07be4c370d2488bd",
+"assets/assets/shapes/outlined/cookie%25204.svg": "a86f92f1208dd2427e56d7540bfa36aa",
+"assets/assets/shapes/outlined/diamond.svg": "d6b5b56b315fd1d06d8b0ac2d586a674",
+"assets/assets/shapes/outlined/cookie%25208.svg": "f825383e8b9c51d8066f7ddc034e006b",
+"assets/assets/shapes/outlined/heart.svg": "4fc673c2d9a4d8c7ac2fbf82b5d5d9ba",
+"assets/assets/shapes/outlined/bun.svg": "7430c9cd815b608bc2211290d3c57b06",
+"assets/assets/shapes/outlined/cookie%252012.svg": "b96aec0656cd1ea98a0a6107aedb7e92",
+"assets/assets/shapes/icons/androidbureau.png": "8606724a0cf6b62f37f9e6e5c0518a3d",
+"assets/assets/shapes/icons/arcnotes.png": "6c198f2e002fe3b92f3bd7d685502936",
+"assets/assets/shapes/icons/donor.png": "6443c9ed40f643e3562d85909f74bfa0",
+"assets/assets/shapes/filled/ghost.svg": "c5b8d6d2a104959180cf8093ad96c3df",
+"assets/assets/shapes/filled/sqare.svg": "a4db0e9b0e92ea0c9eb26e00b8ff70ac",
+"assets/assets/shapes/filled/circle.svg": "6ecfdff843332d51e43939ef9037fb12",
+"assets/assets/shapes/filled/wifi.svg": "f39622786e66e7324f2751cfaecf8419",
+"assets/assets/shapes/filled/triangle.svg": "e04c9bcb0905dafb899d934e2bc5eb9d",
+"assets/assets/shapes/filled/cookie%25206.svg": "8b8184c0e8c374ed1898037de807a4b5",
+"assets/assets/shapes/filled/cookie%25204.svg": "511dc80220d44e90b68e0dbf54ce7acb",
+"assets/assets/shapes/filled/diamond.svg": "f074491e1fcde556f550059a1839def3",
+"assets/assets/shapes/filled/cookie%25208.svg": "2293abbf489f2f0d40a2788dad8f805d",
+"assets/assets/shapes/filled/heart.svg": "c1ad1c4b38aac85b6708e85bca0e5817",
+"assets/assets/shapes/filled/bun.svg": "21d570d95d6662cfaf34ee1c74731c20",
+"assets/assets/shapes/filled/cookie%252012.svg": "859780c59dbfa5175772872905be8f87",
+"assets/assets/fonts/PlaywriteHU-Regular.ttf": "25d450f276eef95062c4763610aec52f",
+"assets/assets/fonts/RobotoSlab-Medium.ttf": "e4281dfb590cdd272a0035c8608ad63a",
+"assets/assets/fonts/Quicksand-Regular.ttf": "5845af22f839a90a9cca3b8ec0e3cff4",
+"assets/assets/fonts/GoogleSansCode-Regular.ttf": "f697971643aa851550a29738f0ee9d02",
+"assets/assets/fonts/Limelight-Regular.ttf": "05e2219509d86cc93d6d13001d234c86",
+"assets/assets/fonts/GoogleSansCode-Medium.ttf": "2ba04ae14884cbd92e785ef9d06a7298",
+"assets/assets/fonts/GoogleSansCode-Bold.ttf": "3770a8b337a749c488f100db271b0095",
+"assets/assets/fonts/RobotoSlab-Regular.ttf": "20f08697e683970e758c23e8bc5a8d2f",
+"assets/assets/fonts/Quicksand-Bold.ttf": "8003228962d5cafb549cf4034f9ece07",
+"assets/assets/fonts/Quicksand-Medium.ttf": "95906e2457ee777801b3ca4b02b4947c",
+"assets/assets/fonts/RobotoSlab-Bold.ttf": "6e7a9327f6ac9fda67078f5b85557fea",
+"assets/AssetManifest.json": "0d033e8de90f2ea1b98db3c51e9e9697",
+"assets/fonts/MaterialIcons-Regular.otf": "26b086484c0655ef7b0eec4ba5672828"};
+// The application shell files that are downloaded before a service worker can
+// start.
+const CORE = ["main.dart.js",
+"index.html",
+"flutter_bootstrap.js",
+"assets/AssetManifest.bin.json",
+"assets/FontManifest.json"];
+
+// During install, the TEMP cache is populated with the application shell files.
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
+  return event.waitUntil(
+    caches.open(TEMP).then((cache) => {
+      return cache.addAll(
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+    })
+  );
+});
+// During activate, the cache is populated with the temp files downloaded in
+// install. If this service worker is upgrading from one with a saved
+// MANIFEST, then use this to retain unchanged resource files.
+self.addEventListener("activate", function(event) {
+  return event.waitUntil(async function() {
+    try {
+      var contentCache = await caches.open(CACHE_NAME);
+      var tempCache = await caches.open(TEMP);
+      var manifestCache = await caches.open(MANIFEST);
+      var manifest = await manifestCache.match('manifest');
+      // When there is no prior manifest, clear the entire cache.
+      if (!manifest) {
+        await caches.delete(CACHE_NAME);
+        contentCache = await caches.open(CACHE_NAME);
+        for (var request of await tempCache.keys()) {
+          var response = await tempCache.match(request);
+          await contentCache.put(request, response);
+        }
+        await caches.delete(TEMP);
+        // Save the manifest to make future upgrades efficient.
+        await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+        // Claim client to enable caching on first launch
+        self.clients.claim();
+        return;
+      }
+      var oldManifest = await manifest.json();
+      var origin = self.location.origin;
+      for (var request of await contentCache.keys()) {
+        var key = request.url.substring(origin.length + 1);
+        if (key == "") {
+          key = "/";
+        }
+        // If a resource from the old manifest is not in the new cache, or if
+        // the MD5 sum has changed, delete it. Otherwise the resource is left
+        // in the cache and can be reused by the new service worker.
+        if (!RESOURCES[key] || RESOURCES[key] != oldManifest[key]) {
+          await contentCache.delete(request);
+        }
+      }
+      // Populate the cache with the app shell TEMP files, potentially overwriting
+      // cache files preserved above.
+      for (var request of await tempCache.keys()) {
+        var response = await tempCache.match(request);
+        await contentCache.put(request, response);
+      }
+      await caches.delete(TEMP);
+      // Save the manifest to make future upgrades efficient.
+      await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+      // Claim client to enable caching on first launch
+      self.clients.claim();
+      return;
+    } catch (err) {
+      // On an unhandled exception the state of the cache cannot be guaranteed.
+      console.error('Failed to upgrade service worker: ' + err);
+      await caches.delete(CACHE_NAME);
+      await caches.delete(TEMP);
+      await caches.delete(MANIFEST);
+    }
+  }());
+});
+// The fetch handler redirects requests for RESOURCE files to the service
+// worker cache.
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== 'GET') {
+    return;
+  }
+  var origin = self.location.origin;
+  var key = event.request.url.substring(origin.length + 1);
+  // Redirect URLs to the index.html
+  if (key.indexOf('?v=') != -1) {
+    key = key.split('?v=')[0];
+  }
+  if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
+    key = '/';
+  }
+  // If the URL is not the RESOURCE list then return to signal that the
+  // browser should take over.
+  if (!RESOURCES[key]) {
+    return;
+  }
+  // If the URL is the index.html, perform an online-first request.
+  if (key == '/') {
+    return onlineFirst(event);
+  }
+  event.respondWith(caches.open(CACHE_NAME)
+    .then((cache) =>  {
+      return cache.match(event.request).then((response) => {
+        // Either respond with the cached resource, or perform a fetch and
+        // lazily populate the cache only if the resource was successfully fetched.
+        return response || fetch(event.request).then((response) => {
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
+          return response;
+        });
+      })
+    })
+  );
+});
+self.addEventListener('message', (event) => {
+  // SkipWaiting can be used to immediately activate a waiting service worker.
+  // This will also require a page refresh triggered by the main worker.
+  if (event.data === 'skipWaiting') {
+    self.skipWaiting();
+    return;
+  }
+  if (event.data === 'downloadOffline') {
+    downloadOffline();
+    return;
+  }
+});
+// Download offline will check the RESOURCES for all files not in the cache
+// and populate them.
+async function downloadOffline() {
+  var resources = [];
+  var contentCache = await caches.open(CACHE_NAME);
+  var currentContent = {};
+  for (var request of await contentCache.keys()) {
+    var key = request.url.substring(origin.length + 1);
+    if (key == "") {
+      key = "/";
+    }
+    currentContent[key] = true;
+  }
+  for (var resourceKey of Object.keys(RESOURCES)) {
+    if (!currentContent[resourceKey]) {
+      resources.push(resourceKey);
+    }
+  }
+  return contentCache.addAll(resources);
+}
+// Attempt to download the resource online before falling back to
+// the offline cache.
+function onlineFirst(event) {
+  return event.respondWith(
+    fetch(event.request).then((response) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    }).catch((error) => {
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.match(event.request).then((response) => {
+          if (response != null) {
+            return response;
+          }
+          throw error;
+        });
+      });
+    })
+  );
+}

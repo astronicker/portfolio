@@ -68,17 +68,15 @@ class LandingPage extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            HomePage(),
-            AboutPage(),
-            ResumePage(),
-            TechPage(),
-            ProjectPage(),
-            ContactPage(),
-          ],
-        ),
+      body: ListView(
+        children: const [
+          HomePage(),
+          AboutPage(),
+          ResumePage(),
+          TechPage(),
+          ProjectPage(),
+          ContactPage(),
+        ],
       ),
     );
   }

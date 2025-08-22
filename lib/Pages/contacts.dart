@@ -58,225 +58,215 @@ class _ContactPageState extends State<ContactPage> {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Padding(
-      padding: EdgeInsets.all(screenWidth < 950 ? 25 : 50),
+      padding: EdgeInsets.all(screenWidth < 950 ? 0 : 50),
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(15),
             child: Align(
               alignment: Alignment.topLeft,
-              child: Text(
-                'Contact',
-                style: TextStyle(
-                  fontFamily: 'RobotoSlab',
-                  color: colorScheme.primary,
-                  fontSize: 52,
-                  fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: EdgeInsets.only(left: screenWidth < 950 ? 25 : 0),
+                child: Text(
+                  'Contact',
+                  style: TextStyle(
+                    fontFamily: 'RobotoSlab',
+                    color: colorScheme.primary,
+                    fontSize: 52,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
           ),
-          Container(
-            width: screenWidth,
-            decoration: BoxDecoration(
-              color: colorScheme.surfaceContainerLowest,
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: ResponsiveRowColumn(
-                breakpoint: 1270,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width:
-                        screenWidth < 1270 ? screenWidth : screenWidth / 3.15,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        _ContactBox(
-                          onTap:
-                              () => ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Copied to clipboard')),
-                              ),
-                          title: 'Phone',
-                          subtitle: '+91 9589623264',
-                          icon: FontAwesomeIcons.phone,
-                        ),
-                        const SizedBox(height: 5),
-                        _ContactBox(
-                          onTap: () {
-                            openEmail();
-                          },
-                          title: 'Mail',
-                          subtitle: 'meayushshukla07@gmail.com',
-                          icon: FontAwesomeIcons.envelope,
-                        ),
-                        const SizedBox(height: 5),
-                        _ContactBox(
-                          onTap: openGithub,
-                          title: 'GitHub',
-                          subtitle: 'astronicker',
-                          icon: FontAwesomeIcons.github,
-                        ),
-                        const SizedBox(height: 5),
-                        _ContactBox(
-                          onTap: openLinkedin,
-                          title: 'LinkedIn',
-                          subtitle: 'Ayush Shukla',
-                          icon: FontAwesomeIcons.linkedin,
-                        ),
-                        const SizedBox(height: 5),
-                      ],
+          ResponsiveRowColumn(
+            breakpoint: 1270,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: screenWidth < 1270 ? screenWidth : screenWidth / 3.15,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _ContactBox(
+                      onTap:
+                          () => ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Copied to clipboard')),
+                          ),
+                      title: 'Phone',
+                      subtitle: '+91 9589623264',
+                      icon: FontAwesomeIcons.phone,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(25),
-                    child: ResponsiveRowColumn(
-                      breakpoint: 1270,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    _ContactBox(
+                      onTap: () {
+                        openEmail();
+                      },
+                      title: 'Mail',
+                      subtitle: 'meayushshukla07@gmail.com',
+                      icon: FontAwesomeIcons.envelope,
+                    ),
+                    _ContactBox(
+                      onTap: openGithub,
+                      title: 'GitHub',
+                      subtitle: 'astronicker',
+                      icon: FontAwesomeIcons.github,
+                    ),
+                    _ContactBox(
+                      onTap: openLinkedin,
+                      title: 'LinkedIn',
+                      subtitle: 'Ayush Shukla',
+                      icon: FontAwesomeIcons.linkedin,
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(25),
+                child: ResponsiveRowColumn(
+                  breakpoint: 1270,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: screenWidth < 1270 ? screenWidth : 320,
+                      height: 400,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: colorScheme.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: TextFormField(
+                        maxLines: null,
+                        minLines: 1,
+                        controller: messageController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Write your message here...',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 15, height: 15),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          width: screenWidth < 1270 ? screenWidth : 320,
-                          height: 400,
                           padding: EdgeInsets.all(15),
+                          width: screenWidth < 1270 ? screenWidth : 320,
+                          height: 80,
                           decoration: BoxDecoration(
                             color: colorScheme.surfaceContainerHighest,
                             borderRadius: BorderRadius.circular(40),
                           ),
-                          child: TextFormField(
-                            maxLines: null,
-                            minLines: 1,
-                            controller: messageController,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: 'Write your message here...',
+                          child: Center(
+                            child: TextFormField(
+                              maxLines: null,
+                              minLines: 1,
+                              controller: emailController,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Enter your email...',
+                              ),
                             ),
                           ),
                         ),
-                        const SizedBox(width: 15, height: 15),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.all(15),
-                              width: screenWidth < 1270 ? screenWidth : 320,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: colorScheme.surfaceContainerHighest,
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              child: Center(
-                                child: TextFormField(
-                                  maxLines: null,
-                                  minLines: 1,
-                                  controller: emailController,
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Enter your email...',
-                                  ),
-                                ),
+                        const SizedBox(height: 15),
+                        Container(
+                          padding: EdgeInsets.all(15),
+                          width: screenWidth < 1270 ? screenWidth : 320,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: colorScheme.surfaceContainerHighest,
+                            borderRadius: BorderRadius.circular(40),
+                          ),
+                          child: Center(
+                            child: TextFormField(
+                              keyboardType: TextInputType.number,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                              ],
+
+                              maxLength: 10,
+                              maxLines: null,
+                              minLines: 1,
+                              controller: phoneController,
+                              buildCounter:
+                                  (
+                                    _, {
+                                    required currentLength,
+                                    required isFocused,
+                                    maxLength,
+                                  }) => null,
+
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Enter your phone number...',
                               ),
                             ),
-                            const SizedBox(height: 15),
-                            Container(
-                              padding: EdgeInsets.all(15),
-                              width: screenWidth < 1270 ? screenWidth : 320,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: colorScheme.surfaceContainerHighest,
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              child: Center(
-                                child: TextFormField(
-                                  keyboardType: TextInputType.number,
-                                  inputFormatters: [
-                                    FilteringTextInputFormatter.digitsOnly,
-                                  ],
-
-                                  maxLength: 10,
-                                  maxLines: null,
-                                  minLines: 1,
-                                  controller: phoneController,
-                                  buildCounter:
-                                      (
-                                        _, {
-                                        required currentLength,
-                                        required isFocused,
-                                        maxLength,
-                                      }) => null,
-
-                                  decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Enter your phone number...',
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: screenWidth < 1270 ? 15 : 65),
-                            GestureDetector(
-                              onTap:
-                                  isSending
-                                      ? null
-                                      : () {
-                                        if (emailController.text.isEmpty ||
-                                            phoneController.text.isEmpty ||
-                                            phoneController.text.length < 10 ||
-                                            messageController.text.isEmpty) {
-                                          ScaffoldMessenger.of(
-                                            context,
-                                          ).showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Please fill in all details.',
-                                              ),
-                                              duration: Duration(seconds: 1),
-                                            ),
-                                          );
-                                          return;
-                                        }
-
-                                        sendMessage();
-                                      },
-                              child: Container(
-                                width: screenWidth < 1270 ? screenWidth : 320,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                  color:
-                                      isSending
-                                          ? colorScheme.primaryContainer
-                                          : colorScheme.primary,
-                                  borderRadius: BorderRadius.circular(40),
-                                ),
-                                child: Center(
-                                  child:
-                                      isSending
-                                          ? CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                                  colorScheme.onPrimary,
-                                                ),
-                                          )
-                                          : Text(
-                                            'Send message',
-                                            style: TextStyle(
-                                              color: colorScheme.onPrimary,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: (screenWidth / 50)
-                                                  .clamp(16, 20),
-                                            ),
+                          ),
+                        ),
+                        SizedBox(height: screenWidth < 1270 ? 15 : 65),
+                        GestureDetector(
+                          onTap:
+                              isSending
+                                  ? null
+                                  : () {
+                                    if (emailController.text.isEmpty ||
+                                        phoneController.text.isEmpty ||
+                                        phoneController.text.length < 10 ||
+                                        messageController.text.isEmpty) {
+                                      ScaffoldMessenger.of(
+                                        context,
+                                      ).showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Please fill in all details.',
                                           ),
-                                ),
-                              ),
+                                          duration: Duration(seconds: 1),
+                                        ),
+                                      );
+                                      return;
+                                    }
+
+                                    sendMessage();
+                                  },
+                          child: Container(
+                            width: screenWidth < 1270 ? screenWidth : 320,
+                            height: screenWidth < 1270 ? 80 : 150,
+                            decoration: BoxDecoration(
+                              color:
+                                  isSending
+                                      ? colorScheme.primaryContainer
+                                      : colorScheme.primary,
+                              borderRadius: BorderRadius.circular(40),
                             ),
-                          ],
+                            child: Center(
+                              child:
+                                  isSending
+                                      ? CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                              colorScheme.onPrimary,
+                                            ),
+                                      )
+                                      : Text(
+                                        'Send message',
+                                        style: TextStyle(
+                                          color: colorScheme.onPrimary,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: (screenWidth / 50).clamp(
+                                            16,
+                                            20,
+                                          ),
+                                        ),
+                                      ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),
